@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lawyer Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/emailjs-com/2.6.0/email.min.js"></script>
+    <style>
+        .nav-hidden { display: none; }
+        .nav-visible { display: flex; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-white shadow py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold text-navy">
+                Lawyer Name
+            </div>
+            <nav class="hidden md:flex space-x-4">
+                <a href="#" class="text-navy hover:underline">Home</a>
+                <a href="#about" class="text-navy hover:underline">About</a>
+                <a href="#services" class="text-navy hover:underline">Services</a>
+                <a href="#contact" class="text-navy hover:underline">Contact</a>
+            </nav>
+            <button onclick="toggleMenu()" class="md:hidden text-navy bg-gold hover:bg-orange-500 px-4 py-2 rounded">
+                ☰
+            </button>
+        </div>
+        <nav id="mobileMenu" class="nav-hidden md:flex space-x-4">
+            <a href="#" class="block text-navy hover:underline py-2">Home</a>
+            <a href="#about" class="block text-navy hover:underline py-2">About</a>
+            <a href="#services" class="block text-navy hover:underline py-2">Services</a>
+            <a href="#contact" class="block text-navy hover:underline py-2">Contact</a>
+        </nav>
+    </header>
+
+    <section id="hero" class="bg-blue-50 text-center py-20">
+        <div class="container mx-auto text-white text-center">
+            <h1 class="text-4xl font-bold mb-4">
+                Your Trusted Legal Partner in Kanpur
+            </h1>
+            <p class="text-lg mb-6">
+                Providing expert legal services across criminal, civil, and family law.
+            </p>
+            <a href="#contact" class="btn text-white bg-gold hover:bg-orange-500 px-6 py-3 rounded">
+                Schedule Consultation
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="bg-white py-16">
+        <div class="container mx-auto flex flex-wrap justify-center space-x-10">
+            <div class="w-1/2">
+                <img src="lawyer-image.jpg" alt="Lawyer Profile" class="w-full h-64 object-cover rounded-lg">
+            </div>
+            <div class="w-1/2 text-left">
+                <h2 class="text-3xl font-bold mb-4">
+                    About Me
+                </h2>
+                <p class="text-gray-700 mb-6">
+                    Experienced advocate with 10+ years of practice in Kanpur. Specializing in criminal defense, civil litigation, and family law.
+                </p>
+                <ul class="list-disc space-y-4 text-gray-700">
+                    <li>10+ years of experience</li>
+                    <li>Handled 500+ cases</li>
+                    <li>5-star client satisfaction</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="bg-gray-100 py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8">
+                Our Services
+            </h2>
+            <div class="grid grid-cols-2 gap-10">
+                <div class="bg-white p-6 rounded shadow hover:shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4">
+                        Criminal Law
+                    </h3>
+                    <p class="text-gray-700">
+                        Defense against criminal charges, including DUI, assault, and theft.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded shadow hover:shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4">
+                        Family Law
+                    </h3>
+                    <p class="text-gray-700">
+                        Divorce, child custody, and domestic violence cases.
+                    </p>
+                </div>
+                <!-- Add more service cards -->
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="bg-blue-50 py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8">
+                Contact Us
+            </h2>
+            <form id="contactForm" class="max-w-md mx-auto">
+                <input type="text" name="user_name" placeholder="Your Name" class="w-full p-3 border rounded mb-4" required>
+                <input type="email" name="user_email" placeholder="Your Email" class="w-full p-3 border rounded mb-4" required>
+                <input type="tel" name="user_phone" placeholder="Your Phone" class="w-full p-3 border rounded mb-4" required>
+                <textarea name="message" placeholder="Your Message" class="w-full p-3 border rounded mb-4" required></textarea>
+                <button type="submit" class="btn text-white bg-gold hover:bg-orange-500 px-6 py-3 rounded">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-white py-8 text-gray-700 text-center">
+        <div class="container mx-auto">
+            <p class="mb-4">
+                © 2026 Lawyer Name. All rights reserved.
+            </p>
+            <div class="flex space-x-4">
+                <a href="#" class="text-navy">
+                    <svg class="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7l10 5 10-5z"></path>
+                    </svg>
+                </a>
+                <a href="#" class="text-navy">
+                    <svg class="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10l5 2-5 2 3-6 3 6z"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            if (menu.classList.contains('nav-hidden')) {
+                menu.classList.remove('nav-hidden');
+                menu.classList.add('nav-visible');
+            } else {
+                menu.classList.remove('nav-visible');
+                menu.classList.add('nav-hidden');
+            }
+        }
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            emailjs.sendForm('service_id', 'template_id', this).then(function(response) {
+                alert('Message sent successfully!');
+            }, function(error) {
+                alert('Error sending message: ' + error);
+            });
+        });
+    </script>
+</body>
+</html>
