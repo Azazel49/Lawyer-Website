@@ -3,215 +3,390 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lex & Justice | Vidhi aur Nyay</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Noto+Sans+Devanagari:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <title>Lex & Justice | विधि और न्याय</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Noto+Sans+Devanagari:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'slate-dark': '#0B0F19',
+                        'slate-charcoal': '#1A1F2E',
+                        'gold': '#D4AF37',
+                        'gold-light': '#E5D5A0',
+                        'amber-accent': '#F59E0B',
+                    },
+                    fontFamily: {
+                        'serif': ['Cinzel', 'serif'],
+                        'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        'devanagari': ['Noto Sans Devanagari', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-20px) rotate(2deg)' },
+                        },
+                        glow: {
+                            '0%, 100%': { box-shadow: '0 0 20px rgba(212, 175, 55, 0.3)' },
+                            '50%': { box-shadow: '0 0 40px rgba(212, 175, 55, 0.6)' },
+                        },
+                    },
+                },
+            },
+        }
+    </script>
     <style>
-        .glass-panel {
-            backdrop-blur-xl;
-            bg-slate-950/40;
-            border: 2px solid border-amber-500/20;
-            shadow-2xl;
-        }
-        .bilingual-text {
-            display: flex;
-            gap: 15px;
-        }
-        .court-icon {
-            position: relative;
-            width: 64px;
-            height: 64px;
-            margin: 20px auto;
-        }
-        .scales-of-justice {
-            fill: currentColor;
-        }
-        .gavel-icon {
-            fill: currentColor;
-        }
-        .law-chamber {
-            fill: currentColor;
-        }
-        .hover-effect {
-            transition: all 0.4s ease;
-        }
-        .hover-effect:hover {
-            transform: scale(1.05);
-            border: 3px solid border-amber-500;
-        }
-        .glowing-border {
-            animation: glow 3s infinite;
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
         }
         @keyframes glow {
-            0%, 100% { box-shadow: 0 0 15px border-amber-500/30; }
-            50% { box-shadow: 0 0 30px border-amber-500/50; }
+            0%, 100% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(212, 175, 55, 0.6); }
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #D4AF37 0%, #E5D5A0 50%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .glass {
+            background: rgba(11, 15, 25, 0.4);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            box-shadow: 0 20px 40px rgba(11, 15, 25, 0.5);
+        }
+        .glass-strong {
+            background: rgba(11, 15, 25, 0.6);
+            backdrop-filter: blur(32px);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            box-shadow: 0 25px 50px rgba(11, 15, 25, 0.7);
+        }
+        .text-reveal {
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.4s ease-out;
+        }
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
+        }
+        .card-hover:hover .text-reveal {
+            max-height: 200px;
         }
     </style>
 </head>
-<body class="bg-slate-950 text-white">
-    <nav class="fixed top-0 left-0 right-0 z-50 glass-panel">
+<body class="bg-slate-dark text-white overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-strong">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-3xl font-Cinzel text-amber-500">Lex & Justice | Vidhi aur Nyay</div>
-            <div class="hidden md:flex space-x-12">
-                <a href="#services" class="text-amber-500 hover:text-gold">Services</a>
-                <a href="#credentials" class="text-amber-500 hover:text-gold">Credentials</a>
-                <a href="#practice" class="text-amber-500 hover:text-gold">Practice Areas</a>
-                <a href="#principles" class="text-amber-500 hover:text-gold">Core Principles</a>
-                <a href="#contact" class="text-amber-500 hover:text-gold">Contact</a>
+            <div class="text-2xl font-serif font-bold gradient-text">Lex & Justice</div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#hero" class="text-amber-500 hover:text-gold transition-colors">Home</a>
+                <a href="#credentials" class="text-amber-500 hover:text-gold transition-colors">Credentials</a>
+                <a href="#practice" class="text-amber-500 hover:text-gold transition-colors">Practice Areas</a>
+                <a href="#principles" class="text-amber-500 hover:text-gold transition-colors">Principles</a>
+                <a href="#contact" class="text-amber-500 hover:text-gold transition-colors">Contact</a>
             </div>
-            <button onclick="toggleMenu()" class="md:hidden text-amber-500">
+            <button onclick="toggleMenu()" class="md:hidden text-amber-500 hover:text-gold transition-colors">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
         </div>
         <div id="mobileMenu" class="hidden md:hidden px-6 pb-4 space-y-3">
-            <a href="#services" class="block text-amber-500 hover:text-gold">Services</a>
-            <a href="#credentials" class="block text-amber-500 hover:text-gold">Credentials</a>
-            <a href="#practice" class="block text-amber-500 hover:text-gold">Practice Areas</a>
-            <a href="#principles" class="block text-amber-500 hover:text-gold">Core Principles</a>
-            <a href="#contact" class="block text-amber-500 hover:text-gold">Contact</a>
+            <a href="#hero" class="block text-amber-500 hover:text-gold transition-colors">Home</a>
+            <a href="#credentials" class="block text-amber-500 hover:text-gold transition-colors">Credentials</a>
+            <a href="#practice" class="block text-amber-500 hover:text-gold transition-colors">Practice Areas</a>
+            <a href="#principles" class="block text-amber-500 hover:text-gold transition-colors">Principles</a>
+            <a href="#contact" class="block text-amber-500 hover:text-gold transition-colors">Contact</a>
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section id="hero" class="relative min-h-screen flex items-center pt-20 pb-10 px-6">
-        <div class="max-w-7xl mx-auto text-center">
-            <h1 class="text-6xl font-Cinzel text-amber-500 mb-4">
-                Lex & Justice | Vidhi aur Nyay
-            </h1>
-            <div class="bilingual-text">
-                <div class="text-lg font-Inter">Consultation Available 24/7</div>
-                <div class="text-lg font-Noto-Sans-Devanagari">सहयोग 24/7 उपलब्ध</div>
-            </div>
-            <div class="glass-panel float-right w-64 h-48 rounded-xl shadow-2xl">
-                <div class="p-8 text-center">
-                    <h3 class="text-2xl font-Cinzel text-amber-500">Schedule Your Consultation</h3>
-                    <a href="#contact" class="bg-amber-500 text-slate-950 px-8 py-4 rounded-full hover:bg-amber-600">
-                        Book Now
+        <div class="absolute top-20 right-10 w-96 h-96 rounded-full bg-gradient-to-br from-amber-500/20 to-gold/10 blur-3xl opacity-50"></div>
+        <div class="absolute bottom-20 left-10 w-80 h-80 rounded-full bg-gradient-to-br from-gold/10 to-amber-500/20 blur-3xl opacity-50"></div>
+
+        <div class="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
+            <!-- Left side - Typography -->
+            <div class="space-y-8 animate-slide-up">
+                <h1 class="text-5xl md:text-7xl font-serif font-bold leading-tight">
+                    <span class="gradient-text">Lex & Justice</span><br>
+                    <span class="text-white text-4xl md:text-5xl font-devanagari">विधि और न्याय</span>
+                </h1>
+                <p class="text-lg text-gray-300 max-w-lg leading-relaxed">
+                    Premium bilingual law chambers for discerning clients. Where expertise meets elegance.
+                </p>
+                <p class="text-lg text-gray-300 max-w-lg leading-relaxed font-devanagari">
+                    चुनिंदा ग्राहकों के लिए प्रीमियम द्विभाषी कानूनी कक्ष।
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#contact" class="bg-gold text-slate-dark px-8 py-3 rounded-full font-semibold hover:bg-gold-light transition-all transform hover:scale-105 shadow-lg shadow-gold/30">
+                        Consult Now
+                    </a>
+                    <a href="#practice" class="glass-strong px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition-all">
+                        Our Services
                     </a>
                 </div>
             </div>
+
+            <!-- Right side - Floating card -->
+            <div class="relative animate-float">
+                <div class="glass-strong rounded-3xl p-8 space-y-6 shadow-2xl shadow-gold/20 border border-amber-500/30">
+                    <div class="w-24 h-24 rounded-full bg-gradient-to-br from-gold to-amber-accent mx-auto flex items-center justify-center">
+                        <svg class="w-12 h-12 text-slate-dark" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-center gradient-text">Schedule Your Consultation</h3>
+                    <p class="text-center text-gray-300 font-devanagari">सहयोग की तारीख निर्धारित करें</p>
+                    <div class="grid grid-cols-2 gap-4 text-center">
+                        <div>
+                            <div class="text-3xl font-bold text-gold">200+</div>
+                            <div class="text-sm text-gray-400">Cases Won</div>
+                            <div class="text-sm text-gray-400 font-devanagari">मामले जीते</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-gold">15+</div>
+                            <div class="text-sm text-gray-400">Years Exp</div>
+                            <div class="text-sm text-gray-400 font-devanagari">वर्ष का अनुभव</div>
+                        </div>
+                    </div>
+                    <div class="flex justify-center space-x-2">
+                        <div class="w-2 h-2 rounded-full bg-gold animate-glow"></div>
+                        <div class="w-2 h-2 rounded-full bg-amber-accent animate-glow" style="animation-delay: 0.5s"></div>
+                        <div class="w-2 h-2 rounded-full bg-gold animate-glow" style="animation-delay: 1s"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- Credentials Section -->
     <section id="credentials" class="py-20 px-6">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-4xl font-Cinzel text-amber-500 mb-8">Our Credentials</h2>
-            <div class="flex flex-wrap justify-center gap-10">
-                <div class="glass-panel p-10 rounded-xl">
-                    <div class="court-icon scales-of-justice"></div>
-                    <h3 class="text-2xl font-Cinzel text-amber-500 mb-4">High Court & Supreme Court Practitioner</h3>
-                    <p class="text-lg font-Noto-Sans-Devanagari">
-                        Practicing at High Court & Supreme Court of India<br>
-                        (उच्च न्यायालय और सर्वोच्च न्यायालय में अभ्यासरत)
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold gradient-text mb-4">Our Credentials</h2>
+                <p class="text-gray-300 font-devanagari text-lg">हमारी योग्यताएँ</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Credential Card 1 -->
+                <div class="glass rounded-2xl p-8 card-hover">
+                    <div class="w-20 h-20 mx-auto mb-6">
+                        <svg class="w-20 h-20 text-amber-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-gold mb-4 text-center">
+                        Practicing at High Court & Supreme Court of India
+                    </h3>
+                    <p class="text-lg text-gray-300 text-center font-devanagari">
+                        उच्च न्यायालय और सर्वोच्च न्यायालय में अभ्यासरत
                     </p>
                 </div>
-                <div class="glass-panel p-10 rounded-xl">
-                    <div class="court-icon gavel-icon"></div>
-                    <h3 class="text-2xl font-Cinzel text-amber-500 mb-4">Legal Expertise</h3>
-                    <p class="text-lg font-Noto-Sans-Devanagari">
-                        15+ years of experience in criminal, civil, and corporate law<br>
-                        (15+ वर्षों की अनुभव में गैर-नैतिक, नैतिक और कंपनिक कानून में)
+
+                <!-- Credential Card 2 -->
+                <div class="glass rounded-2xl p-8 card-hover">
+                    <div class="w-20 h-20 mx-auto mb-6">
+                        <svg class="w-20 h-20 text-amber-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-gold mb-4 text-center">
+                        15+ Years of Legal Excellence
+                    </h3>
+                    <p class="text-lg text-gray-300 text-center font-devanagari">
+                        15+ वर्षों की कानूनी उत्कृष्टता
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Practice Areas Section -->
     <section id="practice" class="py-20 px-6">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-4xl font-Cinzel text-amber-500 mb-8">Practice Areas</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                <div class="glass-panel p-12 rounded-xl hover-effect glowing-border">
-                    <div class="court-icon gavel-icon"></div>
-                    <h3 class="text-2xl font-Cinzel text-amber-500 mb-4">Criminal Defense</h3>
-                    <p class="text-lg font-Noto-Sans-Devanagari">
-                        Expert defense in criminal cases including FIR, IPC, and cybercrimes<br>
-                        (वैधिक मामले, IPC और साइबर अपराधों में विशेषज्ञ रद्द)</p>
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold gradient-text mb-4">Practice Areas</h2>
+                <p class="text-lg text-gray-300 font-devanagari">अभ्यास क्षेत्र</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Criminal Defense -->
+                <div class="glass rounded-2xl p-6 card-hover cursor-pointer group">
+                    <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-gold to-amber-accent flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-slate-dark" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-gold mb-2">Criminal Defense</h3>
+                    <div class="text-reveal">
+                        <p class="text-gray-300 text-sm leading-relaxed">Expert defense in criminal cases including FIR, IPC, and cybercrimes.</p>
+                        <p class="text-gray-300 text-sm leading-relaxed font-devanagari">फौजदारी मामलों में विशेषज्ञ रक्षा, FIR, IPC, और साइबर अपराध।</p>
+                    </div>
                 </div>
-                <div class="glass-panel p-12 rounded-xl hover-effect glowing-border">
-                    <div class="court-icon gavel-icon"></div>
-                    <h3 class="text-2xl font-Cinzel text-amber-500 mb-4">Civil Litigation</h3>
-                    <p class="text-lg font-Noto-Sans-Devanagari">
-                        Representation in civil disputes, contract matters, and property conflicts<br>
-                        (नैतिक मुकदमे, कं्ट्रैक्ट मुद्दे और संपत्ति विवादों में प्रतिनिधित्व)</p>
+
+                <!-- Civil Litigation -->
+                <div class="glass rounded-2xl p-6 card-hover cursor-pointer group">
+                    <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-amber-accent to-gold flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-slate-dark" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-gold mb-2">Civil Litigation</h3>
+                    <div class="text-reveal">
+                        <p class="text-gray-300 text-sm leading-relaxed">Representation in civil disputes, contract matters, and property conflicts.</p>
+                        <p class="text-gray-300 text-sm leading-relaxed font-devanagari">नैतिक मुकदमों, कंट्राक्ट मामलों और संपत्ति विवादों में प्रतिनिधित्व।</p>
+                    </div>
                 </div>
-                <div class="glass-panel p-12 rounded-xl hover-effect glowing-border">
-                    <div class="court-icon gavel-icon"></div>
-                    <h3 class="text-2xl font-Cinzel text-amber-500 mb-4">Corporate Law</h3>
-                    <p class="text-lg font-Noto-Sans-Devanagari">
-                        Business formation, M&A, and compliance advisory<br>
-                        (कंपनी संस्थापन, M&A और पालन सलाह)</p>
+
+                <!-- Corporate Law -->
+                <div class="glass rounded-2xl p-6 card-hover cursor-pointer group">
+                    <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-gold to-amber-accent flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-slate-dark" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M21 13v8H3v-8M10 21V10h2v11M15 21V15h2v6M6 21V18h2v3M18 21V19h2v2"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-gold mb-2">Corporate Law</h3>
+                    <div class="text-reveal">
+                        <p class="text-gray-300 text-sm leading-relaxed">Business formation, M&A, and compliance advisory.</p>
+                        <p class="text-gray-300 text-sm leading-relaxed font-devanagari">व्यापार संस्थापना, M&A और पालन सलाह।</p>
+                    </div>
                 </div>
-                <div class="glass-panel p-12 rounded-xl hover-effect glowing-border">
-                    <div class="court-icon gavel-icon"></div>
-                    <h3 class="text-2xl font-Cinzel text-amber-500 mb-4">Property Law</h3>
-                    <p class="text-lg font-Noto-Sans-Devanagari">
-                        Real estate transactions and property dispute resolution<br>
-                        (संपत्ति लेन-खरिज और संपत्ति विवादों का समाधान)</p>
+
+                <!-- Property Law -->
+                <div class="glass rounded-2xl p-6 card-hover cursor-pointer group">
+                    <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-amber-accent to-gold flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-slate-dark" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-gold mb-2">Property Law</h3>
+                    <div class="text-reveal">
+                        <p class="text-gray-300 text-sm leading-relaxed">Real estate transactions and property dispute resolution.</p>
+                        <p class="text-gray-300 text-sm leading-relaxed font-devanagari">संपत्ति लेन-खरिज और संपत्ति विवादों का समाधान।</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Core Principles Section -->
     <section id="principles" class="py-20 px-6">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-4xl font-Cinzel text-amber-500 mb-8">Core Principles</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <div class="glass-panel p-12 rounded-xl">
-                    <h3 class="text-2xl font-Cinzel text-amber-500 mb-4">Integrity</h3>
-                    <p class="text-lg font-Noto-Sans-Devanagari">
-                        Uncompromising ethical standards in all legal proceedings<br>
-                        (सर्व कायिक गतिविधियों में अननुकूल नैतिक मानक)</p>
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold gradient-text mb-4">Core Principles</h2>
+                <p class="text-lg text-gray-300 font-devanagari">मूल नीतियाँ</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Integrity -->
+                <div class="glass rounded-2xl p-8 card-hover">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-gold to-amber-accent mx-auto mb-6 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-slate-dark" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-gold mb-4 text-center">Integrity</h3>
+                    <div class="text-reveal">
+                        <p class="text-gray-300 text-center leading-relaxed">Uncompromising ethical standards in all legal proceedings.</p>
+                        <p class="text-gray-300 text-center leading-relaxed font-devanagari">सर्व कायिक गतिविधियों में अननुकूल नैतिक मानक।</p>
+                    </div>
                 </div>
-                <div class="glass-panel p-12 rounded-xl">
-                    <h3 class="text-2xl font-Cinzel text-amber-500 mb-4">Confidentiality</h3>
-                    <p class="text-lg font-Noto-Sans-Devanagari">
-                        Strict protection of client information and case details<br>
-                        (कल्पना और मामले की जानकारी की गोपनीयता)</p>
+
+                <!-- Confidentiality -->
+                <div class="glass rounded-2xl p-8 card-hover">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-amber-accent to-gold mx-auto mb-6 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-slate-dark" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-gold mb-4 text-center">Confidentiality</h3>
+                    <div class="text-reveal">
+                        <p class="text-gray-300 text-center leading-relaxed">Strict protection of client information and case details.</p>
+                        <p class="text-gray-300 text-center leading-relaxed font-devanagari">कल्पना और मामले की जानकारी की गोपनीयता।</p>
+                    </div>
                 </div>
-                <div class="glass-panel p-12 rounded-xl">
-                    <h3 class="text-2xl font-Cinzel text-amber-500 mb-4">Advocacy</h3>
-                    <p class="text-lg font-Noto-Sans-Devanagari">
-                        Aggressive yet ethical representation for client interests<br>
-                        (कल्पना के लिए गंभीर और नैतिक प्रतिनिधित्व)</p>
+
+                <!-- Advocacy -->
+                <div class="glass rounded-2xl p-8 card-hover">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-gold to-amber-accent mx-auto mb-6 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-slate-dark" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M21 13v8H3v-8M10 21V10h2v11M15 21V15h2v6M6 21V18h2v3M18 21V19h2v2"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-gold mb-4 text-center">Advocacy</h3>
+                    <div class="text-reveal">
+                        <p class="text-gray-300 text-center leading-relaxed">Aggressive yet ethical representation for client interests.</p>
+                        <p class="text-gray-300 text-center leading-relaxed font-devanagari">कल्पना के लिए गंभीर और नैतिक प्रतिनिधित्व।</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact" class="py-20 px-6">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-4xl font-Cinzel text-amber-500 mb-8">Contact Us</h2>
-            <div class="glass-panel p-12 rounded-xl">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold gradient-text mb-4">Contact Us</h2>
+                <p class="text-lg text-gray-300 font-devanagari">संपर्क करें</p>
+            </div>
+            <div class="max-w-2xl mx-auto glass-strong rounded-3xl p-8 md:p-12">
                 <form id="contactForm" class="space-y-6">
                     <div>
-                        <input type="text" name="user_name" placeholder="Your Name" class="w-full p-4 rounded-xl bg-slate-950/20 border border-amber-500/20 text-slate-950 placeholder-gray-400 focus:outline-none focus:border-amber-500/50 transition-colors" required>
+                        <input type="text" name="user_name" placeholder="Your Name" class="w-full p-4 rounded-xl bg-slate-950/20 border border-amber-500/20 text-white placeholder-gray-400 focus:outline-none focus:border-gold/50 transition-colors" required>
                     </div>
                     <div>
-                        <input type="email" name="user_email" placeholder="Your Email" class="w-full p-4 rounded-xl bg-slate-950/20 border border-amber-500/20 text-slate-950 placeholder-gray-400 focus:outline-none focus:border-amber-500/50 transition-colors" required>
+                        <input type="email" name="user_email" placeholder="Your Email" class="w-full p-4 rounded-xl bg-slate-950/20 border border-amber-500/20 text-white placeholder-gray-400 focus:outline-none focus:border-gold/50 transition-colors" required>
                     </div>
                     <div>
-                        <input type="tel" name="user_phone" placeholder="Your Phone" class="w-full p-4 rounded-xl bg-slate-950/20 border border-amber-500/20 text-slate-950 placeholder-gray-400 focus:outline-none focus:border-amber-500/50 transition-colors" required>
+                        <input type="tel" name="user_phone" placeholder="Your Phone" class="w-full p-4 rounded-xl bg-slate-950/20 border border-amber-500/20 text-white placeholder-gray-400 focus:outline-none focus:border-gold/50 transition-colors" required>
                     </div>
                     <div>
-                        <textarea name="matter_details" placeholder="Describe Your Legal Matter" rows="6" class="w-full p-4 rounded-xl bg-slate-950/20 border border-amber-500/20 text-slate-950 placeholder-gray-400 focus:outline-none focus:border-amber-500/50 transition-colors resize-none" required></textarea>
+                        <textarea name="message" placeholder="Matter Details (English)" rows="4" class="w-full p-4 rounded-xl bg-slate-950/20 border border-amber-500/20 text-white placeholder-gray-400 focus:outline-none focus:border-gold/50 transition-colors resize-none" required></textarea>
                     </div>
-                    <div class="bilingual-text">
-                        <div class="text-lg font-Inter">Matter Details (English)</div>
-                        <div class="text-lg font-Noto-Sans-Devanagari">महत्वपूर्ण मुद्दे (हिंदी)</div>
+                    <div>
+                        <textarea name="message_hindi" placeholder="महत्वपूर्ण मुद्दे (हिंदी)" rows="4" class="w-full p-4 rounded-xl bg-slate-950/20 border border-amber-500/20 text-white placeholder-gray-400 focus:outline-none focus:border-gold/50 transition-colors resize-none" required></textarea>
                     </div>
-                    <button type="submit" class="w-full bg-amber-500 text-slate-950 px-12 py-6 rounded-full hover:bg-amber-600">
-                        Submit Inquiry
+                    <button type="submit" class="w-full bg-gradient-to-r from-gold to-amber-accent text-slate-dark px-8 py-4 rounded-xl font-bold hover:shadow-lg hover:shadow-gold/30 transition-all transform hover:scale-[1.02]">
+                        Send Inquiry
                     </button>
                 </form>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 px-6 border-t border-slate-950/20">
-        <div class="max-w-7xl mx-auto text-center">
-            <p class="text-gray-400">© 2026 Lex & Justice. All rights reserved.</p>
+    <!-- Footer -->
+    <footer class="py-8 px-6 border-t border-white/10">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div class="text-2xl font-serif font-bold gradient-text">Lex & Justice</div>
+            <div class="flex space-x-6">
+                <a href="#" class="text-gray-400 hover:text-gold transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-gold transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M7 10l5 2-5 2 3-6 3 6z"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="text-gray-400 text-sm">© 2026 Lex & Justice. All rights reserved.</div>
         </div>
     </footer>
 
@@ -228,9 +403,23 @@
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             emailjs.sendForm('service_id', 'template_id', this).then(function(response) {
-                alert('Inquiry submitted successfully!');
+                alert('Message sent successfully!');
             }, function(error) {
-                alert('Error: ' + error);
+                alert('Error sending message: ' + error);
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
     </script>
