@@ -17,7 +17,7 @@
         .glass {
             background: rgba(17,24,39,0.6); /* #111827 with 60% opacity */
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(245, 158, 11, 0.1); /* amber-500/10 */
+            border: 1px solid rgba(245,158,11,0.1); /* amber-500/10 */
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
         .gradient-text {
@@ -46,7 +46,7 @@
             <i class="fas fa-bars"></i>
         </button>
     </nav>
-    <div id="mobileMenu" class="hidden md:hidden bg-[#111827]/60 backdrop-blur-xl border border-amber-500/10 shadow-2xl rounded-2xl mx-4 mt-2 p-4 space-y-3">
+    <div id="mobileMenu" class="hidden md:hidden glass rounded-2xl mx-4 mt-2 p-4 space-y-3">
         <a href="#hero" class="block gradient-text hover:opacity-80 transition-opacity">Home</a>
         <a href="#credentials" class="block gradient-text hover:opacity-80 transition-opacity">Credentials</a>
         <a href="#practice" class="block gradient-text hover:opacity-80 transition-opacity">Practice Areas</a>
@@ -57,136 +57,4 @@
     <!-- Hero Section -->
     <section id="hero" class="flex flex-col md:flex-row items-center justify-between py-20 px-6 md:px-12 gap-12">
         <div class="flex-1">
-            <h1 class="text-5xl md:text-6xl font-bold" style="font-family: 'Cinzel', serif;">
-                <span class="gradient-text">Lex & Justice</span><br>
-                <span class="gradient-text" style="font-family: 'Noto Sans Devanagari', sans-serif;">विधि और न्याय</span>
-            </h1>
-            <p class="mt-6 text-lg text-gray-300 max-w-lg">
-                Premium bilingual law chambers delivering elite legal solutions for discerning clients.
-            </p>
-            <p class="mt-2 text-lg text-gray-300 max-w-lg" style="font-family: 'Noto Sans Devanagari', sans-serif;">
-                प्रीमियम द्विभाषी कानूनी कक्ष, विशिष्ट ग्राहकों के लिए उत्कृष्ट समाधान प्रदान करता है।
-            </p>
-            <div class="mt-8 flex space-x-4">
-                <a href="#contact" class="bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-500 text-[#0B0F19] font-semibold px-6 py-3 rounded-full hover:opacity-90 transition-opacity">
-                    Consult Now
-                </a>
-                <a href="#practice" class="glass px-6 py-3 rounded-full font-semibold hover:bg-[#111827]/80 transition-colors">
-                    Our Services
-                </a>
-            </div>
-        </div>
-        <div class="flex-1 flex justify-center items-center">
-            <div class="glass w-full max-w-md p-8 rounded-2xl shadow-2xl">
-                <h3 class="text-2xl font-bold mb-4 gradient-text" style="font-family: 'Cinzel', serif;">Schedule Consultation</h3>
-                <p class="text-gray-300 mb-4" style="font-family: 'Noto Sans Devanagari', sans-serif;">सहयोग निर्धारित करें</p>
-                <a href="#contact" class="block w-full text-center bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-500 text-[#0B0F19] py-2 rounded-full hover:opacity-90 transition-opacity">
-                    Book Now
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- High Court Credentials -->
-    <section id="credentials" class="py-12 px-6 md:px-12">
-        <div class="glass flex items-center justify-center space-x-4 p-6 rounded-2xl">
-            <i class="fas fa-balance-scale text-3xl text-amber-400"></i>
-            <div class="text-center">
-                <p class="gradient-text text-xl font-medium" style="font-family: 'Cinzel', serif;">Practicing at High Court & Supreme Court of India</p>
-                <p class="gradient-text text-xl font-medium" style="font-family: 'Noto Sans Devanagari', sans-serif;">उच्च न्यायालय और सर्वोच्च न्यायालय में अभ्यासरत</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bento Grid Practice Areas -->
-    <section id="practice" class="py-12 px-6 md:px-12">
-        <h2 class="text-4xl font-bold mb-8 text-center gradient-text" style="font-family: 'Cinzel', serif;">Practice Areas</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-            <!-- Criminal Defense -->
-            <div class="glass p-6 rounded-2xl hover:scale-105 transform transition-transform">
-                <div class="flex items-center space-x-4 mb-4">
-                    <i class="fas fa-gavel text-2xl text-amber-400"></i>
-                    <h3 class="text-2xl font-semibold gradient-text" style="font-family: 'Cinzel', serif;">Criminal Defense</h3>
-                </div>
-                <p class="text-gray-300" style="font-family: 'Noto Sans Devanagari', sans-serif;">फौजदारी मामले</p>
-            </div>
-            <!-- Civil Litigation -->
-            <div class="glass p-6 rounded-2xl hover:scale-105 transform transition-transform">
-                <div class="flex items-center space-x-4 mb-4">
-                    <i class="fas fa-building-columns text-2xl text-amber-400"></i>
-                    <h3 class="text-2xl font-semibold gradient-text" style="font-family: 'Cinzel', serif;">Civil Litigation</h3>
-                </div>
-                <p class="text-gray-300" style="font-family: 'Noto Sans Devanagari', sans-serif;">दीवानी मुकदमे</p>
-            </div>
-            <!-- Corporate Law -->
-            <div class="glass p-6 rounded-2xl hover:scale-105 transform transition-transform">
-                <div class="flex items-center space-x-4 mb-4">
-                    <i class="fas fa-briefcase text-2xl text-amber-400"></i>
-                    <h3 class="text-2xl font-semibold gradient-text" style="font-family: 'Cinzel', serif;">Corporate Law</h3>
-                </div>
-                <p class="text-gray-300" style="font-family: 'Noto Sans Devanagari', sans-serif;">कॉर्पोरेट कानून</p>
-            </div>
-            <!-- Property Law -->
-            <div class="glass p-6 rounded-2xl hover:scale-105 transform transition-transform">
-                <div class="flex items-center space-x-4 mb-4">
-                    <i class="fas fa-house-chimney text-2xl text-amber-400"></i>
-                    <h3 class="text-2xl font-semibold gradient-text" style="font-family: 'Cinzel', serif;">Property Law</h3>
-                </div>
-                <p class="text-gray-300" style="font-family: 'Noto Sans Devanagari', sans-serif;">संपत्ति विवाद</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Core Principles Grid -->
-    <section id="principles" class="py-12 px-6 md:px-12">
-        <h2 class="text-4xl font-bold mb-8 text-center gradient-text" style="font-family: 'Cinzel', serif;">Core Principles</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="glass p-6 rounded-2xl text-center">
-                <h3 class="text-2xl font-semibold gradient-text" style="font-family: 'Cinzel', serif;">Integrity</h3>
-                <p class="text-gray-300" style="font-family: 'Noto Sans Devanagari', sans-serif;">सत्यनिष्ठा</p>
-            </div>
-            <div class="glass p-6 rounded-2xl text-center">
-                <h3 class="text-2xl font-semibold gradient-text" style="font-family: 'Cinzel', serif;">Confidentiality</h3>
-                <p class="text-gray-300" style="font-family: 'Noto Sans Devanagari', sans-serif;">गोपनीयता</p>
-            </div>
-            <div class="glass p-6 rounded-2xl text-center">
-                <h3 class="text-2xl font-semibold gradient-text" style="font-family: 'Cinzel', serif;">Dedicated Advocacy</h3>
-                <p class="text-gray-300" style="font-family: 'Noto Sans Devanagari', sans-serif;">वकालत</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Intake Form -->
-    <section id="contact" class="py-12 px-6 md:px-12">
-        <h2 class="text-4xl font-bold mb-8 text-center gradient-text" style="font-family: 'Cinzel', serif;">Contact Us</h2>
-        <div class="max-w-2xl mx-auto glass p-8 rounded-2xl">
-            <form id="contactForm" class="space-y-6">
-                <input type="text" name="name" placeholder="Your Name" class="w-full px-4 py-2 bg-[#1F2937]/50 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:border-amber-400 rounded" required>
-                <input type="email" name="email" placeholder="Your Email" class="w-full px-4 py-2 bg-[#1F2937]/50 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:border-amber-400 rounded" required>
-                <input type="tel" name="phone" placeholder="Your Phone" class="w-full px-4 py-2 bg-[#1F2937]/50 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:border-amber-400 rounded" required>
-                <textarea name="message" placeholder="Matter Details (English)" rows="4" class="w-full px-4 py-2 bg-[#1F2937]/50 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:border-amber-400 rounded" required></textarea>
-                <textarea name="message_hindi" placeholder="महत्वपूर्ण मुद्दे (हिंदी)" rows="4" class="w-full px-4 py-2 bg-[#1F2937]/50 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:border-amber-400 rounded" required></textarea>
-                <button type="submit" class="w-full bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-500 text-[#0B0F19] py-3 rounded-full font-semibold hover:opacity-90 transition-opacity">
-                    Send Inquiry
-                </button>
-            </form>
-        </div>
-    </section>
-
-    <footer class="py-6 text-center text-gray-400">
-        <p>© 2026 Lex & Justice. All rights reserved.</p>
-    </footer>
-
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
-        }
-        // Placeholder for EmailJS or other form handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Form submitted (functionality to be integrated).');
-        });
-    </script>
-</body>
-</html>
+            <h1 class="text-5xl md:text-6xl font-bold"
