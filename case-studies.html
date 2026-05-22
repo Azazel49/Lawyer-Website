@@ -3,55 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Case Studies - Lawyer Website</title>
+    <title>Notable Precedents | Chambers of [Lawyer Name]</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; }
+        h1, h2, h3, .font-serif { font-family: 'Cinzel', serif; }
+        .gradient-text { background: linear-gradient(to right, #D4AF37, #FBBF24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .legal-watermark { position: fixed; font-size: 45rem; color: rgba(212, 175, 55, 0.02); z-index: -1; pointer-events: none; top: 10%; right: -10%; }
+    </style>
 </head>
-<body class="bg-gray-50">
-    <header class="bg-white shadow py-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="text-2xl font-bold text-navy">
-                Lawyer Name
+<body class="bg-[#0B0F19] text-gray-300 relative overflow-x-hidden min-h-screen flex flex-col">
+    
+    <i class="fas fa-landmark legal-watermark"></i>
+
+    <!-- Elegant Legal Navbar -->
+    <nav class="p-6 flex justify-between items-center container mx-auto relative z-10 border-b border-gray-800">
+        <a href="index.html" class="flex items-center gap-4 hover:opacity-80 transition">
+            <i class="fas fa-balance-scale-right text-3xl text-amber-500"></i>
+            <div class="flex flex-col">
+                <span class="text-2xl font-serif font-bold tracking-widest text-white uppercase leading-none">Adv. [Name]</span>
+                <span class="text-xs text-amber-500 tracking-[0.2em] uppercase mt-1">Kanpur Chambers</span>
             </div>
-            <nav class="hidden md:flex space-x-4">
-                <a href="index.html" class="text-navy hover:underline">Home</a>
-                <a href="about.html" class="text-navy hover:underline">About</a>
-                <a href="services.html" class="text-navy hover:underline">Services</a>
-                <a href="#" class="text-navy hover:underline">Case Studies</a>
-                <a href="index.html#contact" class="text-navy hover:underline">Contact</a>
-            </nav>
+        </a>
+        <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest items-center">
+            <a href="index.html" class="hover:text-amber-500 transition">Home</a>
+            <a href="about.html" class="hover:text-amber-500 transition">Profile</a>
+            <a href="services.html" class="hover:text-amber-500 transition">Practice</a>
+            <a href="case-studies.html" class="text-amber-500 transition">Precedents</a>
+            <a href="index.html#contact" class="border border-amber-500 text-amber-500 px-6 py-2 hover:bg-amber-500 hover:text-black transition duration-300">Consult Counsel</a>
         </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="py-16 text-center border-b border-amber-500/10 relative z-10 bg-[#111622]">
+        <p class="text-amber-500 tracking-[0.3em] text-sm font-semibold mb-4">TRACK RECORD</p>
+        <h1 class="text-4xl md:text-5xl font-serif text-white mb-6">Notable Precedents</h1>
+        <p class="text-gray-500 text-sm max-w-2xl mx-auto italic">* Client identities have been redacted to maintain strict attorney-client privilege.</p>
     </header>
 
-    <section class="bg-white py-16">
-        <div class="container mx-auto text-center">
-            <h1 class="text-4xl font-bold mb-8">
-                Our Success Stories
-            </h1>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <div class="bg-gray-100 p-6 rounded shadow hover:shadow-lg">
-                    <h3 class="text-xl font-bold mb-4">
-                        Criminal Defense Case
-                    </h3>
-                    <p class="text-gray-700">
-                        Successfully defended a client against DUI charges through strategic evidence collection and courtroom advocacy.
-                    </p>
+    <!-- Case Studies List -->
+    <main class="flex-grow container mx-auto px-6 py-20 relative z-10 max-w-5xl">
+        <div class="space-y-12">
+            
+            <!-- Case 1 -->
+            <div class="border-l-4 border-amber-500 bg-[#111622] p-8 md:p-10 relative">
+                <i class="fas fa-quote-right absolute top-6 right-8 text-4xl text-gray-800"></i>
+                <div class="flex gap-4 items-center mb-6 border-b border-gray-800 pb-4">
+                    <span class="bg-gray-800 text-amber-500 text-xs px-3 py-1 uppercase tracking-widest font-bold">Criminal Defense</span>
+                    <span class="text-gray-500 text-sm"><i class="fas fa-building-columns mr-2"></i>Allahabad High Court</span>
                 </div>
-                <div class="bg-gray-100 p-6 rounded shadow hover:shadow-lg">
-                    <h3 class="text-xl font-bold mb-4">
-                        Family Law Resolution
-                    </h3>
-                    <p class="text-gray-700">
-                        Resolved a complex child custody dispute through mediation, achieving a favorable outcome for both parties.
-                    </p>
-                </div>
-                <!-- Add more case studies -->
+                <h3 class="text-2xl text-white font-serif mb-4">Secured Bail in Complex Economic Offense</h3>
+                <p class="text-gray-400 font-light leading-relaxed mb-4">
+                    <strong>The Challenge:</strong> The client was accused in a high-profile multi-crore corporate fraud case involving complex financial transactions. Bail was repeatedly denied at the district level due to the severity of the charges.
+                </p>
+                <p class="text-gray-400 font-light leading-relaxed text-amber-500/80">
+                    <strong>The Resolution:</strong> Through rigorous dissection of the forensic audit report and citing supreme court precedents regarding prolonged pre-trial incarceration, the Chambers successfully secured regular bail from the High Court.
+                </p>
             </div>
-        </div>
-    </section>
 
-    <footer class="bg-white py-8 text-gray-700 text-center">
-        <div class="container mx-auto">
-            <p>© 2026 Lawyer Name. All rights reserved.</p>
+            <!-- Case 2 -->
+            <div class="border-l-4 border-amber-500 bg-[#111622] p-8 md:p-10 relative">
+                <i class="fas fa-quote-right absolute top-6 right-8 text-4xl text-gray-800"></i>
+                <div class="flex gap-4 items-center mb-6 border-b border-gray-800 pb-4">
+                    <span class="bg-gray-800 text-amber-500 text-xs px-3 py-1 uppercase tracking-widest font-bold">Civil Litigation</span>
+                    <span class="text-gray-500 text-sm"><i class="fas fa-building-columns mr-2"></i>District Court, Kanpur</span>
+                </div>
+                <h3 class="text-2xl text-white font-serif mb-4">Ancestral Property Partition Dispute</h3>
+                <p class="text-gray-400 font-light leading-relaxed mb-4">
+                    <strong>The Challenge:</strong> A family dispute spanning over 20 years involving prime commercial real estate in Kanpur. Opposing counsel attempted to use forged unregistered wills to claim sole ownership.
+                </p>
+                <p class="text-gray-400 font-light leading-relaxed text-amber-500/80">
+                    <strong>The Resolution:</strong> Conducted aggressive cross-examination of the opposition's handwriting experts. Successfully obtained a decree for equal partition, restoring the client's rightful inheritance.
+                </p>
+            </div>
+
+            <!-- Case 3 -->
+            <div class="border-l-4 border-amber-500 bg-[#111622] p-8 md:p-10 relative">
+                <i class="fas fa-quote-right absolute top-6 right-8 text-4xl text-gray-800"></i>
+                <div class="flex gap-4 items-center mb-6 border-b border-gray-800 pb-4">
+                    <span class="bg-gray-800 text-amber-500 text-xs px-3 py-1 uppercase tracking-widest font-bold">Corporate Law</span>
+                    <span class="text-gray-500 text-sm"><i class="fas fa-building-columns mr-2"></i>Arbitration Tribunal</span>
+                </div>
+                <h3 class="text-2xl text-white font-serif mb-4">Breach of Commercial Contract Defense</h3>
+                <p class="text-gray-400 font-light leading-relaxed mb-4">
+                    <strong>The Challenge:</strong> A local manufacturing unit faced a devastating ₹5 Crore specific performance lawsuit from a national vendor over alleged contract violations.
+                </p>
+                <p class="text-gray-400 font-light leading-relaxed text-amber-500/80">
+                    <strong>The Resolution:</strong> Invoked the 'Force Majeure' clause hidden within the initial agreement and negotiated a zero-liability settlement, saving the client's business from bankruptcy.
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 py-8 relative z-10 bg-[#0B0F19] mt-auto">
+        <div class="container mx-auto px-6 text-center text-xs text-gray-600 tracking-widest uppercase">
+            <p>&copy; 2026 Adv. [Lawyer Name]. All Rights Reserved.</p>
         </div>
     </footer>
 </body>
